@@ -1,0 +1,33 @@
+<!-- Navbar - Contiene el menú con los enlaces de los apartados principales -->
+<nav class="sticky top-0 h-fit text-slate-100 bg-slate-950">
+    <div class=" h-full flex items-center px-6 py-3 relative">
+        <!-- Logo inicial del navbar -->
+        <a href="/api/view/index">
+            <img src="/logos/logo.png" alt="Logo" class="w-9 h-9">
+        </a>
+        <!-- Menú -->
+        <ul class="flex gap-10 absolute justify-center inset-x-0 px-6">
+            <!-- Página Principal -->
+            <li>
+                <a href="/" class="flex place-items-center">
+                    <img src="/icons/casa-48-verde.png" class="h-6 m-2" alt="Inicio Icon">
+                    Inicio
+                </a>
+            </li>
+            <!-- Formulario para agregar un país en la base de datos -->
+            <li>
+                <a href="/nuevo/pais" class="flex place-items-center">
+                    <img src="/icons/mas-48-verde.png" class="h-6 m-2" alt="Inicio Icon">
+                    Nuevo País
+                </a>
+            </li>
+            <!-- Dashboard con una tabla que muestra todos los paises -->
+            <li>
+                <a href="/dashboard" class="flex place-items-center">
+                    <img src="/icons/lista-48-verde.png" class="h-6 m-2" alt="Inicio Icon">
+                    Países
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

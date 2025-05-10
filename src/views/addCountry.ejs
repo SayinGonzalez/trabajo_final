@@ -1,0 +1,63 @@
+<section class="w-full flex-grow bg-pink-950 text-gray-200 content-center">
+
+    <form action="/paises/crear" method="POST"
+        class="w-[45%] m-auto py-8 px-10 rounded-3xl bg-transparent shadow-sm shadow-gray-200 grid grid-cols-6 gap-x-2 gap-y-1">
+
+        <label for="countryName" class="col-span-3 focus-within:text-rose-500 flex flex-col">Nombre Oficial en Español:
+            <input type="text"
+                class="bg-slate-300 rounded-lg my-2 h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black"
+                id="countryName" name="countryName" placeholder="Nombre del País">
+        </label>
+
+        <label for="countryCapital" class="col-span-3 focus-within:text-rose-500 flex flex-col">Nombre de la Capital:
+            <input type="text"
+                class="bg-slate-300 rounded-lg my-2 h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black"
+                id="countryCapital" name="countryCapital" placeholder="Capital del País">
+        </label>
+
+        <label for="countryBorders" class="col-span-2 focus-within:text-rose-500 flex flex-col my-2">Fronteras:
+            <input type="text"
+                class="bg-slate-300 rounded-lg my-2 h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black"
+                id="countryBorders" name="countryBorders" placeholder="Ej. ARG, BRA, ...">
+        </label>
+
+        <label for="countryArea" class="col-span-2 focus-within:text-rose-500 flex flex-col my-2">Área:
+            <input type="number"
+                class="[&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-slate-300 rounded-lg my-2 h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black"
+                id="countryArea" name="countryArea" required>
+        </label>
+
+        <label for="countryPopulation" class="col-span-2 focus-within:text-rose-500 flex flex-col my-2">Población:
+            <input type="number"
+                class="[&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-slate-300 rounded-lg my-2 h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black"
+                id="countryPopulation" name="countryPopulation" required>
+        </label>
+
+        <label class="col-span-3 focus-within:text-rose-500 my-2 flex flex-col">Índice de Gini:
+            <div class="flex gap-2 my-2">
+                <input type="number"
+                    class="w-16 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-slate-300 rounded-lg h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black"
+                    id="countryGiniYear" name="countryGiniYear" placeholder="Año">
+                <input type="text"
+                    class="w-full bg-slate-300 rounded-lg h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black"
+                    id="countryGiniValue" name="countryGiniValue" placeholder="Índice">
+            </div>
+        </label>
+
+        <label for="countryTimezones" class="col-span-3 focus-within:text-rose-500 flex flex-col my-2">Zona Horaria:
+            <input type="text"
+                class="w-full bg-slate-300 rounded-lg my-2 h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black "
+                id="countryTimezones" name="countryTimezones" placeholder="Ej. UTC+00:00" required>
+        </label>
+
+        <label for="creador" class="col-span-full focus-within:text-rose-500 flex my-2 items-center gap-3">Creador:
+            <input type="text"
+                class="w-full bg-slate-300 rounded-lg my-2 h-8 outline-none focus:ring-2 focus:ring-rose-700 p-2 text-center text-black placeholder-gray-600 focus:placeholder-transparent"
+                id="creador" name="creador" placeholder="Ej. El Estropajo">
+        </label>
+
+        <button type="submit" class="col-span-full mt-4 h-10 shadow-sm shadow-rose-600 rounded-xl bg-rose-900 hover:shadow-md hover:shadow-rose-700 hover:border-0">Crear País</button>
+
+    </form>
+
+</section>

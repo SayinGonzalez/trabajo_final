@@ -1,0 +1,66 @@
+<head>
+    <script src="/js/deleteCountries.js"></script>
+    <script src="https://kit.fontawesome.com/fce8cb2351.js" crossorigin="anonymous"></script>
+</head>
+
+<section class="bg-teal-900 text-slate-100 p-4 h-full">
+
+    <% if (typeof successMessage !== "undefined" && successMessage) { %>
+        <div id="mensajeExitoso" class="text-lg text-[#008000] bg-[#e0ffe0] text-center relative m-auto p-3 mb-4">
+            <%= successMessage %>
+            <button type="button" onclick="this.parentElement.classList.add('hidden')" class="absolute top-0 right-4">x</button>
+        </div>
+    <% } %> 
+    
+    <% if (typeof errorMessage !== "undefined" && errorMessage) { %>
+        <div id="mensajeError" class="text-lg text-[#800000] bg-[#ffe0e0] text-center relative m-auto p-3 mb-4">
+            <%= errorMessage %>
+            <button type="button" onclick="this.parentElement.classList.add('hidden')" class="absolute top-0 right-4">x</button>
+        </div>
+    <% } %>
+
+    <table class="border w-full">
+        <thead class="bg-teal-950">
+            <tr>
+                <th class="border px-4 py-2">Nombre Oficial en Español</th>
+                <th class="border px-4 py-2">Capital</th>
+                <th class="border px-4 py-2">Fronteras</th>
+                <th class="border px-4 py-2">Área</th>
+                <th class="border px-4 py-2">Población</th>
+                <th class="border px-4 py-2">Índice Gini</th>
+                <th class="border px-4 py-2">Zona Horaria</th>
+                <th class="border px-4 py-2">Creador</th>
+                <th class="border px-4 py-2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% countries.forEach(country => {%>
+               <tr>
+                    <td class="border p-4"><%= country.name %></td>
+                    <td class="border p-4"><%= country.capital %></td>
+                    <td class="border p-4">
+                        <% country.borders.forEach(border => { %>
+                            <li class="list-disc marker:text-violet-500"><%= border %></li>
+                        <% }) %>
+                    </td>
+                    <td class="border p-4"><%= country.area %></td>
+                    <td class="border p-4"><%= country.population %></td>
+                    <td class="border p-4">AÑO - ÍNDICE <br>
+                        <%- (country.gini === 'Sin Datos') 
+                            ? 'Sin datos' 
+                            : `<strong>${country.gini.year}:</strong> ${country.gini.value}`%>
+                    </td>
+                    <td class="border p-4"><% country.timezones.forEach(timezone => { %>
+                        <li class="list-disc marker:text-violet-500"><%= timezone %></li>
+                     <% }) %></td>
+                    <td class="border p-4"><%= country.creador %></td>
+                    <td class="border text-center p-4">
+                        <button type="button" onclick="window.location.href='/editar/pais/<%= country.id %>'" class="block mx-auto my-3 w-10 h-10 border-2 rounded-xl hover:bg-violet-800 hover:shadow-md hover:shadow-violet-600 hover:border-transparent"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button type="button" onclick="deleteCountry('<%= country.id %>')" class="block mx-auto my-3 w-10 h-10 border-2 rounded-xl hover:bg-violet-800 hover:shadow-md hover:shadow-violet-600 hover:border-transparent"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+               </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    
+</section>
